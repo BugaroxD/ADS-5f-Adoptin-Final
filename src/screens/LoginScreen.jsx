@@ -5,6 +5,7 @@ import { Button, HelperText, Paragraph, TextInput } from "react-native-paper";
 import { signInWithEmailAndPassword } from "firebase/auth";
 import { auth } from "../config/firebase";
 import styles from "../utils/styles";
+import Logo from "../components/Logo";
 
 /**
  * Componente de Login do usuário
@@ -44,7 +45,7 @@ export default function LoginScreen({ navigation }) {
         setError(error.message); // mostra a mensagem original do Firebase
         const errorCode = error.code; // obtém o código de erro do Firebase
         switch (
-        errorCode // verifica qual é o código de erro
+          errorCode // verifica qual é o código de erro
         ) {
           case "auth/email-already-in-use":
             setError("Esse email já está em uso por outro usuário."); // mostra uma mensagem humanizada
@@ -63,18 +64,19 @@ export default function LoginScreen({ navigation }) {
 
   return (
     <View style={styles.container}>
+      <Logo />
       <Paragraph>Faça o seu Login</Paragraph>
       <HelperText type="error"> {error} </HelperText>
       <View style={styles.maxWidth}>
         <Paragraph>E-mail</Paragraph>
 
-          <TextInput
-            mode="outlined"
-            placeholder="Digite seu e-mail"
-            value={email}
-            onChangeText={setEmail}
-            style={styles.maxWidth}
-          />
+        <TextInput
+          mode="outlined"
+          placeholder="Digite seu e-mail"
+          value={email}
+          onChangeText={setEmail}
+          style={styles.maxWidth}
+        />
       </View>
       <View style={styles.maxWidth}>
         <Paragraph>Senha</Paragraph>

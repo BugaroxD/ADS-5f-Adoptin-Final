@@ -8,7 +8,7 @@ import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import SignOut from "./screens/SignOut";
 import UserProfile from "./screens/UserProfile";
-import TarefasScreen from "./screens/TarefasScreen";
+import CadastrarAnimal from "./screens/CadastrarAnimal";
 
 const Stack = createNativeStackNavigator();
 
@@ -59,7 +59,6 @@ export function MBTNavigation() {
       tabBarOptions={{
         activeTintColor: "#fff",
         labelStyle: { fontSize: 8, fontWeight: "bold" },
-
       }}
     >
       <MTB.Screen
@@ -80,10 +79,10 @@ export function MBTNavigation() {
         }}
       />
       <MTB.Screen
-        name="Tarefas"
-        component={TarefasScreen}
+        name="CadastrarAnimal"
+        component={CadastrarAnimal}
         options={{
-          title: "Tarefas",
+          title: "Cadastrar Animal",
           tabBarIcon: "format-list-bulleted",
         }}
       />
